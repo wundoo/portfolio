@@ -57,6 +57,8 @@
 
             <div id="banner" role="banner">
 
+                <img src="<?php echo bloginfo("template_directory"); ?>/img/initial.png" alt="Initiale du logo" width="80" height="60">
+
                 <p>Nous concevons, développons et donnons vie à votre projet</p>
 
                 <a class="button blue" href="#portfolio">découvrir nos réalisations</a>

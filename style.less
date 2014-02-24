@@ -10,7 +10,7 @@ Version: 1.0
  */
 
 @bleu : #1782b7;
-@bleu-clair : #15709e;
+@bleu-moyen : #15709e;
 @bleu-fonce : #0e4c6b;
 @bleu-transparent : rgba(23,130,183,.9);
 @gris-fonce : #555555;
@@ -18,6 +18,18 @@ Version: 1.0
 @gris-clair : #efefef;
 @noir : #000000;
 @blanc : #ffffff;
+
+/*
+ * Functions
+ */
+
+.transition(@type){
+	transition: @type .2s;
+	-webkit-transition: @type .2s;
+	-moz-transition: @type .2s;
+	-ms-transition: @type .2s;
+	-o-transition: @type .2s; 
+}
 
 /*
  * Icones
@@ -233,6 +245,8 @@ li{
 	-webkit-border-radius: 90px;
 	-moz-border-radius: 90px;
 	border-radius: 90px;
+	.transition(color);
+	.transition(border-color);
 }
 
 .circle:hover{
@@ -251,6 +265,7 @@ li{
 	float : left;
 	background-image : url(img/logo.jpg);
 	border-right : 1px solid @gris-moyen;
+	.transition(background-image);
 }
 
 #logo:hover{
@@ -309,7 +324,12 @@ nav a:hover{
 
 #banner{
 	background-color : @gris-fonce;
-	padding : 300px 0 50px 0;
+	padding : 180px 0 50px 0;
+}
+
+#banner img{
+	display : block;
+	margin : 0 auto 65px auto;
 }
 
 #banner p{
@@ -336,7 +356,12 @@ nav a:hover{
 	margin : 0 auto 100px auto;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px;
+	border-radius: 3px;	
+	.transition(background-color);
+}
+
+#banner .button.blue:hover{	
+	background-color : @bleu-moyen;
 }
 
 #banner .scroll{
@@ -354,6 +379,12 @@ nav a:hover{
 	-webkit-border-radius: 90px;
 	-moz-border-radius: 90px;
 	border-radius: 90px;
+	.transition(opacity);
+}
+
+#banner .scroll:hover{	
+	opacity : 0.6;
+	filter : alpha(opacity=60); /* For IE8 and earlier */
 }
 
 /*
@@ -482,7 +513,7 @@ nav a:hover{
 	height : 300px;
 	margin-bottom : 20px;
 	float : left;
-	overflow : hidden;
+	overflow : hidden;	
 }
 
 #portfolio article:nth-child(2n){
@@ -497,22 +528,23 @@ nav a:hover{
 }
 
 #portfolio article:hover .workInfos{
-	display : block;
+	opacity : 0.95;
+	filter : alpha(opacity=95); /* For IE8 and earlier */
 }
 
 #portfolio .workInfos{
-	display : none;
 	position : absolute;
 	top : 0;
 	left : 0;
 	background-color : @bleu;
-	opacity : 0.95;
-	filter : alpha(opacity=95); /* For IE8 and earlier */
+	opacity : 0;
+	filter : alpha(opacity=0); /* For IE8 and earlier */
 	padding : 40px;
 	width : 390px;
 	height : 220px;
 	color : @blanc;
 	z-index : 10;
+	.transition(opacity);
 }
 
 #portfolio h3{
@@ -551,6 +583,8 @@ nav a:hover{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	.transition(color);
+	.transition(background-color);
 }
 
 #portfolio .button:hover{
@@ -663,6 +697,7 @@ nav a:hover{
 
 #contact .infos a{
 	color : @bleu;
+	.transition(color);
 }
 
 #contact .infos a:hover{
@@ -700,7 +735,7 @@ nav a:hover{
 	width : 264px;
 	height : 12px;
 	padding : 16px 18px;
-	background-color : @bleu-clair;
+	background-color : @bleu-moyen;
 	border : none;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -721,7 +756,7 @@ nav a:hover{
 	width : 584px;
 	height : 265px;
 	padding : 16px 18px;
-	background-color : @bleu-clair;
+	background-color : @bleu-moyen;
 	border : none;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -745,6 +780,8 @@ nav a:hover{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	.transition(color);
+	.transition(background-color);
 }
 
 #contact .button:hover{
@@ -802,6 +839,7 @@ footer p{
 
 footer a{
 	color : @bleu;
+	.transition(color);
 }
 
 footer a:hover{
